@@ -1,0 +1,343 @@
+/* services.css */
+/* Reset the margin and padding to remove any unwanted space */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1B1B1B;
+    color: white;
+}
+
+html, body {
+    height: auto; /* or 100%, depending on your content */
+    margin: 0;
+    padding: 0;
+    background: #000; /* Set the background color to black */
+    color: white;
+    text-decoration: none;
+    overflow-x: hidden; /* Hide horizontal scrollbar if not needed */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+}
+
+.navbar {
+    background-color: #000; /* Add a semi-transparent background for better readability */
+    color: #fff; /* Text color for navbar items */
+    display: flex; /* Use flexbox to arrange items horizontally */
+    justify-content: space-between; /* Push items to the ends of the container */
+    align-items: center; /* Center items vertically */
+    padding: 20px 30px; /* Add some padding to the navbar */
+    text-decoration: none;
+}
+
+.navbar a {
+height: 50px; /* Example fixed height */
+color: #fff;
+}
+
+/* Styles for the company name */
+.navbar-home {
+  font-size: 24px; /* Increase font size for the company name */
+  font-weight: bold; /* Make it bold */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+  display: inline-block; /* Allow transformation */
+  color: #fff; /* Default color */
+}
+
+/* Hover effect for the company name */
+.navbar-home:hover {
+  transform: scale(1.1); /* Enlarge the text */
+  color: gold; /* Change color on hover (optional) */
+  text-decoration: none;
+}
+
+/* Styles for the navigation items */
+.navbar-list {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display items horizontally */
+}
+
+.navbar-list li {
+margin-right: 20px; /* Add spacing between navbar items */
+}
+
+/* Styles for the navigation items with a more professional look */
+.navbar-list li a {
+color: #fff;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a professional font */
+font-size: 18px; /* Adjust font size */
+padding: 10px 15px; /* Add padding for a comfortable click area */
+position: relative;
+transition: transform 0.3s ease, color 0.3s ease; /* Add smooth transitions */
+}
+
+/* Hover effect for navbar items */
+.navbar-list li a:hover {
+transform: scale(1.1); /* Slightly scale on hover for a subtle effect */
+color: silver; /* Change text color on hover */
+text-decoration: none;
+}
+
+/* Add a border-bottom to the currently active page */
+.nav-item1.active, .nav-item2.active, .nav-item3.active, .nav-item4.active, .nav-item5.active { 
+border-bottom: 2px solid silver; /* Add a bottom border with a different color to the active page */ 
+transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+text-decoration: none;
+}
+  
+  /* If you have sections that need to be full-screen height and snap */
+.section {
+    min-height: 100vh; /* Set minimum height to fill the screen */
+    scroll-snap-align: start; /* Snap to the start of the section */
+    background: #000; /* Set the background color to black for each section */
+    color: white;
+}
+
+.carousel-item {
+    position: relative;
+    height: calc(100vh - 66px); /* Adjust the height to account for the navbar and footer */
+    color: white;
+    background-color: black; /* Default background color */
+}
+
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1; /* Ensure it's behind the content */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Adjust as needed for your images */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2; /* Above the ::before pseudo-element */
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+}
+
+.service-card {
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 200px 0;
+    padding: 50px;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-card:nth-of-type(2) .service-image {
+    order: 2; /* Place the image after the description on the second card */
+    margin-right: 0; /* Reset the margin right for the image */
+    margin-left: 20px; /* Add space to the left of the image */
+}
+
+.service-card:nth-of-type(4) .service-image {
+    order: 2; /* Place the image after the description on the second card */
+    margin-right: 0; /* Reset the margin right for the image */
+    margin-left: 20px; /* Add space to the left of the image */
+}
+
+.service-card .service-image {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.service-card .service-image img {
+    width: 225px;
+    height: 225px;
+}
+
+.service-card .service-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Enhancing the Images within Cards */
+.service-image img {
+    width: 120px; /* Adjust size for consistency */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); /* Shadow for depth */
+}
+
+.service-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: #D4AF37;
+}
+
+.service-card p {
+    font-size: 1.0em;
+    line-height: 1.25;
+    color: #eff1f3;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 800px) {
+    /* Responsive Adjustments for Service Cards */
+    .service-card {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center; /* Center align items for a cohesive look */
+        text-align: center; /* Center text for better readability */
+    }
+
+    .service-image {
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+
+    .service-image img {
+        width: 100px; /* Slightly smaller images on smaller screens */
+        margin: auto; /* Center images */
+    }
+}
+
+
+/* For Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+    width: 10px; /* scrollbar width */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: black; /* color of the tracking area */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* color of the scroll thumb */
+    border-radius: 10px; /* roundness of the scroll thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* color of the scroll thumb on hover */
+  }
+  
+  /* For Firefox */
+  * {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #555 black; /* thumb and track color */
+  }  
+
+/* Footer CSS */
+.footer {
+    background-color: black; /* Footer background color */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .social-icon {
+    margin: 0 10px;
+    display: inline-flex; /* changed to inline-flex to center icons */
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* Circle size */
+    height: 45px; /* Circle size */
+    border: 2px solid #fff; /* Adjust thickness of the circle */
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px; /* Icon size */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions for box-shadow and transform */
+    background: transparent;
+  }
+  
+  .social-icon:hover {
+    color: #fff !important; /* Force white color */
+    transform: scale(1.1); /* Slightly enlarge the icons */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Soft outer glow */
+  }
+  
+  /* Footer Links CSS */
+.footer-links {
+    display: flex; /* Use flex to put all items in a row */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px; /* Add padding around the links for a better click area */
+    transition: transform 0.3s ease; /* Smooth transition for enlarging the links */
+  }
+  
+  .footer-link:hover {
+    color: aqua;
+    transform: scale(1.1); /* Enlarge only the hovered link */
+    text-decoration: none;
+  }
+  
+  /* Styling for dividers "|" */
+  .footer-links span {
+    color: #fff;
+    padding: 0 5px; /* Keep the dividers close to the links */
+  }
+  
+  /* Ensuring the copyright is centered at the bottom */
+  .copy-right {
+    text-align: center; /* Center the copyright text */
+    width: 100%; /* Ensure it spans the full width of its container */
+    padding-top: 20px; /* Add space above the copyright */
+  }
+  
+  
+  .copy-right {
+    font-size: 0.8em;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .footer-links a {
+      display: block; /* Stack the links on small screens */
+      margin: 5px 0; /* Adjust spacing as needed */
+    }
+  }

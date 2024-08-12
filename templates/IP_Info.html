@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./IP_Info.css">
+    <title> Cyberburgs - IP_Location </title>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-home" href="index.html"> cyberburgs </a>
+        <div class="navbar-items" id="navbaritem">
+          <ul class="navbar-list">
+            <li class="nav-item1">
+              <a class="navitem1" href="about.html"> About </a>
+            </li>
+            <li class="nav-item2">
+              <a class="navitem2" href="services.html"> Services </a>
+            </li>
+            <li class="nav-item3">
+              <a class="navitem3" href="projects.html"> Projects </a>
+            </li>
+            <li class="nav-item4">
+              <a class="navitem4" href="blogs.html"> Blogs </a>
+            </li>
+            <li class="nav-item5">
+              <a class="navitem5" href="contact.html"> Contact </a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="geolocation-finder">
+        <h1>IP Geolocation Finder</h1>
+        <input
+            type="text"
+            placeholder="Enter IP address"
+        />
+        <button onClick={findLocation}>Find</button>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+          <a href="https://www.instagram.com/cyberburgs" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/CYBURGS" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/cyberburgs" class="social-icon"><i class="fab fa-twitter-square"></i></a>
+          <a href="https://www.linkedin.com/in/cyber-burgs-8696482b2/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <div class="footer-links">
+          <a href="/privacy.html" class="footer-link" id="privacy-policy">Privacy Policy</a>
+          <span>|</span>
+          <a href="/terms.html" class="footer-link" id="terms-use">Terms of Use</a>
+          <span>|</span>
+          <a href="/disclaimer.html" class="footer-link" id="disclaimer">Disclaimer</a>
+        </div>
+        <div class="copy-right">
+          © cyberburgs
+        </div>
+    </footer>
+
+    <script>
+        const API_KEY = 'f8bed403a3b7fc';
+
+        function findLocation() {
+            const ipAddress = document.getElementById('ipInput').value.trim();
+            if (!ipAddress) {
+                alert('Please enter a valid IP address.');
+                return;
+            }
+
+            const url = `https://ipapi.co/${ipAddress}/json/?key=${API_KEY}`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch data: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayData(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to retrieve location data!');
+                });
+        }
+
+        function displayData(data) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <p>IP: ${data.ip}</p>
+                <p>City: ${data.city}</p>
+                <p>Region: ${data.region}</p>
+                <p>Country: ${data.country_name}</p>
+                <p>Postal Code: ${data.postal}</p>
+                <p>Latitude and Longitude: ${data.latitude}, ${data.longitude}</p>
+                <p>ISP: ${data.org}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

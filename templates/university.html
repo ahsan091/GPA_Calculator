@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberburgs - L & A</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" type="image/jpg" href="logo.jpg">
+    <link rel="stylesheet" href="university.css">
+    <script src="university.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-home" href="index.html"> cyberburgs </a>
+        <div class="navbar-items" id="navbaritem">
+          <ul class="navbar-list">
+            <li class="nav-item1">
+              <a class="navitem1" href="about.html"> About </a>
+            </li>
+            <li class="nav-item2">
+              <a class="navitem2" href="services.html"> Services </a>
+            </li>
+            <li class="nav-item3">
+              <a class="navitem3" href="projects.html"> Projects </a>
+            </li>
+            <li class="nav-item4">
+              <a class="navitem4" href="blogs.html"> Blogs </a>
+            </li>
+            <li class="nav-item5">
+              <a class="navitem5" href="contact.html"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <header>
+        <h1> Lectures & Assignments </h1>
+    </header>
+
+    <main>
+        <div class="lecture-container">
+            <div class="lecture-link">
+                <a href="#" onclick="toggleDropdown('course1-dropdown')"> Design & Analysis of Algorithm </a>
+                <div id="course1-dropdown" class="dropdown-content" style="display:none;">
+                    <a href="DAA/Lectures">Lectures</a>
+                    <a href="DAA/Assignments">Assignments</a>
+                </div>
+            </div> <br>
+            <div class="lecture-link">
+                <a href="#" onclick="toggleDropdown('course2-dropdown')"> Artificial Intelligence </a>
+                <div id="course2-dropdown" class="dropdown-content" style="display:none;">
+                    <a href="AI/Lectures">Lectures</a>
+                    <a href="AI/Assignments">Assignments</a>
+                </div>
+            </div> <br>
+            <div class="lecture-link">
+                <a href="#" onclick="toggleDropdown('course3-dropdown')"> Information Assurance </a>
+                <div id="course3-dropdown" class="dropdown-content" style="display:none;">
+                    <a href="IA/Lectures">Lectures</a>
+                    <a href="IA/Assignments">Assignments</a>
+                </div>
+            </div> <br>
+            <div class="lecture-link">
+                <a href="#" onclick="toggleDropdown('course4-dropdown')"> Software Engineering </a>
+                <div id="course4-dropdown" class="dropdown-content" style="display:none;">
+                    <a href="SE/Lectures">Lectures</a>
+                    <a href="SE/Assignments">Assignments</a>
+                </div>
+            </div> <br>
+            <div class="lecture-link">
+                <a href="#" onclick="toggleDropdown('course5-dropdown')"> Operating System </a> 
+                <div id="course5-dropdown" class="dropdown-content" style="display:none;">
+                    <a href="OS/Lectures">Lectures</a>
+                    <a href="OS/Assignments">Assignments</a>
+                </div>
+            </div> 
+        </div> 
+    </main>
+    
+    <footer class="footer">
+      <div class="social-links">
+        <a href="https://www.instagram.com/cyberburgs" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/CYBURGS" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/cyberburgs" class="social-icon"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.linkedin.com/in/cyber-burgs-8696482b2/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      </div>
+      
+      <div class="footer-links">
+        <a href="/privacy" class="footer-link" id="privacy-policy">Privacy Policy</a>
+        <span>|</span>
+        <a href="/terms" class="footer-link" id="terms-use">Terms of Use</a>
+        <span>|</span>
+        <a href="/disclaimer" class="footer-link" id="disclaimer">Disclaimer</a>
+      </div>
+      <div class="copy-right">
+        © cyberburgs
+      </div>
+    </footer>
+</body>
+</html>

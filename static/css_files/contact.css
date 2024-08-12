@@ -1,0 +1,214 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Keep this to stack children vertically */
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+}
+
+/* Basic Styles for Navbar */
+.navbar {
+    background-color: #000; /* Add a semi-transparent background for better readability */
+    color: #fff; /* Text color for navbar items */
+    display: flex; /* Use flexbox to arrange items horizontally */
+    justify-content: space-between; /* Push items to the ends of the container */
+    align-items: center; /* Center items vertically */
+    padding: 20px 30px; /* Add some padding to the navbar */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Styles for the company name */
+.navbar-home {
+  font-size: 24px; /* Increase font size for the company name */
+  font-weight: bold; /* Make it bold */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+  display: inline-block; /* Allow transformation */
+  color: #fff; /* Default color */
+  text-decoration: none;
+}
+
+/* Hover effect for the company name */
+.navbar-home:hover {
+  transform: scale(1.1); /* Enlarge the text */
+  color: gold; /* Change color on hover (optional) */
+  text-decoration: none;
+}
+
+/* Styles for the navigation items */
+.navbar-list {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display items horizontally */
+}
+
+.navbar-list li {
+    margin-right: 20px; /* Add spacing between navbar items */
+}
+
+/* Styles for the navigation items with a more professional look */
+.navbar-list li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a professional font */
+    font-size: 18px; /* Adjust font size */
+    padding: 10px 15px; /* Add padding for a comfortable click area */
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add smooth transitions */
+}
+
+/* Hover effect for navbar items */
+.navbar-list li a:hover {
+    transform: scale(1.1); /* Slightly scale on hover for a subtle effect */
+    color: silver; /* Change text color on hover */
+    text-decoration: none;
+}
+
+/* Add a border-bottom to the currently active page */
+.nav-item1.active, .nav-item2.active, .nav-item3.active, .nav-item4.active, .nav-item5.active { 
+    border-bottom: 2px solid silver; /* Add a bottom border with a different color to the active page */ 
+}
+  
+.contact-container {
+    margin: auto; /* Center horizontally */
+    width: 100%; /* Maintain full width */
+    max-width: 500px; /* Maximum width of the container */
+    /* No change to padding, background, border-radius, or box-shadow */
+    padding: 40px;
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: white;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #2c2c2c; /* Input background */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* Input text color */
+}
+
+.contact-form button {
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: black; /* Button background */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 20px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+}
+
+.contact-form button:hover {
+    background-color: #0066ff; /* Button hover state */
+}
+  
+/* Footer CSS */
+.footer {
+    background-color: black; /* Footer background color */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .social-icon {
+    margin: 0 10px;
+    display: inline-flex; /* changed to inline-flex to center icons */
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* Circle size */
+    height: 45px; /* Circle size */
+    border: 2px solid #fff; /* Adjust thickness of the circle */
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px; /* Icon size */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions for box-shadow and transform */
+    background: transparent;
+  }
+  
+  .social-icon:hover {
+    color: #fff !important; /* Force white color */
+    transform: scale(1.1); /* Slightly enlarge the icons */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Soft outer glow */
+  }
+  
+  /* Footer Links CSS */
+.footer-links {
+    display: flex; /* Use flex to put all items in a row */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px; /* Add padding around the links for a better click area */
+    transition: transform 0.3s ease; /* Smooth transition for enlarging the links */
+  }
+  
+  .footer-link:hover {
+    color: aqua;
+    transform: scale(1.1); /* Enlarge only the hovered link */
+    text-decoration: none;
+  }
+  
+  /* Styling for dividers "|" */
+  .footer-links span {
+    color: #fff;
+    padding: 0 5px; /* Keep the dividers close to the links */
+  }
+  
+  /* Ensuring the copyright is centered at the bottom */
+  .copy-right {
+    text-align: center; /* Center the copyright text */
+    width: 100%; /* Ensure it spans the full width of its container */
+    padding-top: 20px; /* Add space above the copyright */
+  }
+  
+  
+  .copy-right {
+    font-size: 0.8em;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .footer-links a {
+      display: block; /* Stack the links on small screens */
+      margin: 5px 0; /* Adjust spacing as needed */
+    }
+  }
+  

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <link rel="icon" type="image/jpg" href="logo.jpg">
+    <link rel="stylesheet" href="/static/css_files/contact.css">
+</head>
+<body>
+    <nav class="navbar">
+    <a class="navbar-home" href="/">cyberburgs</a>
+    <div class="navbar-items" id="navbaritem">
+        <ul class="navbar-list">
+          <li class="nav-item1">
+            <a class="navitem1" href="/about"> About </a>
+          </li>
+          <li class="nav-item2">
+            <a class="navitem2" href="/services"> Services </a>
+          </li>
+          <li class="nav-item3">
+            <a class="navitem3" href="/projects"> Projects </a>
+          </li>
+          <li class="nav-item4">
+            <a class="navitem4" href="/blogs"> Blogs </a>
+          </li>
+          <li class="nav-item5">
+            <a class="navitem5" href="/contact"> Contact </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<div class="contact-container">
+  <main class="animate__animated animate__fadeInDown">
+    <h2> CONTACT </h2> <br>
+    <form class="contact-form" action="https://formsubmit.co/admin@cyberburgs.com" method="post">
+      <input type="text" name="name" placeholder="Full Name" required> <br>
+      <input type="email" name="email" placeholder="Email Address..." required> <br>
+      <textarea name="message" placeholder="Write Message Here..." required></textarea> <br><br>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Submission!">
+      <input type="hidden" name="_next" value="http://127.0.0.1:5500/contact.html"> <!-- cyberburgs.com/contact.html -->
+      <input type="hidden" name="_autoresponse" value="Your Mail is Delivered Successfully!">
+      <input type="hidden" name="_template" value="table">
+      <button type="submit">SEND</button>
+    </form>
+  </main>
+</div>
+  <!-- Footer HTML -->
+  <footer class="footer">
+    <div class="social-links">
+      <a href="https://www.instagram.com/cyberburgs" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/CYBURGS" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/cyberburgs" class="social-icon"><i class="fab fa-twitter-square"></i></a>
+      <a href="https://www.linkedin.com/in/cyber-burgs-8696482b2/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+    </div>
+    
+    <!-- Footer Links Section -->
+    <div class="footer-links">
+        <a href="/privacy" class="footer-link" id="privacy-policy">Privacy Policy</a>
+        <span>|</span>
+        <a href="/terms" class="footer-link" id="terms-use">Terms of Use</a>
+        <span>|</span>
+        <a href="/disclaimer" class="footer-link" id="disclaimer">Disclaimer</a>
+      </div>
+      <div class="copy-right">
+        © cyberburgs
+      </div>
+  </footer>
+</body>
+</html>

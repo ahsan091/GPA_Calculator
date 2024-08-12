@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> GPA_Calculations </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" type="image/jpg" href="logo.jpg">
+    <link rel="stylesheet" href="/static/css_files/Generate_Fields.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-home" href="/"> cyberburgs </a>
+        <div class="navbar-items" id="navbaritem">
+          <ul class="navbar-list">
+            <li class="nav-item1">
+              <a class="navitem1" href="/about"> About </a>
+            </li>
+            <li class="nav-item2">
+              <a class="navitem2" href="/services"> Services </a>
+            </li>
+            <li class="nav-item3">
+              <a class="navitem3" href="/projects"> Projects </a>
+            </li>
+            <li class="nav-item4">
+              <a class="navitem4" href="/blogs"> Blogs </a>
+            </li>
+            <li class="nav-item5">
+              <a class="navitem5" href="/contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div id="headingContainer">
+            <h1>GPA Calculation!</h1>
+        </div>
+        <div class="container">
+            <form method="post" action="./calculations">
+                <input type="hidden" name="numCourse" value="{{ num_courses }}">
+                <input type="hidden" name="numSemester" value="{{ num_semester }}">
+                {% for i in range(1, num_courses + 1) %}
+                <label for="course"> Course {{ i }} </label>
+                <select name="grades">
+                    <option> A </option>
+                    <option> A- </option>
+                    <option> B+ </option>
+                    <option> B </option>
+                    <option> B- </option>
+                    <option> C+ </option>
+                    <option> C </option>
+                    <option> C- </option>
+                    <option> D+ </option>
+                    <option> D </option>
+                    <option> F </option>
+                </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="credit"> Credits </label>
+                <input type="number" name="courses" required> <br>
+                {% endfor %}
+                {% for i in range(1, num_semester) %}
+                <label for="semester"> Semester {{ i }}: </label>
+                <input type="number" name="gpa_semester" step="0.01" required> &nbsp;&nbsp;&nbsp;
+                {% endfor %} <br>
+                <button type="submit"> Submit </button>
+            </form>
+
+            <p>  GPA: {{ gpa | default(0) | round(3) }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CGPA: {{ cgpa | default(0) | round(3) }} </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+      <div class="social-links">
+        <a href="https://www.instagram.com/cyberburgs" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/CYBURGS" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/cyberburgs" class="social-icon"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.linkedin.com/in/cyber-burgs-8696482b2/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      </div>
+
+      <div class="footer-links">
+        <a href="/privacy" class="footer-link" id="privacy-policy">Privacy Policy</a>
+        <span>|</span>
+        <a href="/terms" class="footer-link" id="terms-use">Terms of Use</a>
+        <span>|</span>
+        <a href="/disclaimer" class="footer-link" id="disclaimer">Disclaimer</a>
+      </div>
+      <div class="copy-right">
+        © cyberburgs
+      </div>
+    </footer>
+</body>

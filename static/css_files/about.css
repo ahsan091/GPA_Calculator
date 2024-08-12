@@ -1,0 +1,322 @@
+body, html {
+    height: auto; /* Allows the body to grow as long as there is content */
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Optional: adds depth */    
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.fullscreen-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: calc(100vh - 100px); /* Adjust if your navbar and footer have different heights */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #000; /* Add a semi-transparent background for better readability */
+    color: #fff; /* Text color for navbar items */
+    display: flex; /* Use flexbox to arrange items horizontally */
+    justify-content: space-between; /* Push items to the ends of the container */
+    align-items: center; /* Center items vertically */
+    padding: 20px 30px; /* Add some padding to the navbar */
+}
+
+
+.navbar a {
+text-decoration: none;
+color: #fff;
+}
+
+/* Styles for the company name */
+.navbar-home {
+  font-size: 24px; /* Increase font size for the company name */
+  font-weight: bold; /* Make it bold */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+  display: inline-block; /* Allow transformation */
+  color: #fff; /* Default color */
+  text-decoration: none;
+}
+
+/* Hover effect for the company name */
+.navbar-home:hover {
+  transform: scale(1.1); /* Enlarge the text */
+  color: gold; /* Change color on hover (optional) */
+  text-decoration: none;
+}
+
+/* Styles for the navigation items */
+.navbar-list {
+list-style-type: none; /* Remove bullet points from the list */
+margin: 0;
+padding: 0;
+display: flex; /* Display items horizontally */
+}
+
+.navbar-list li {
+margin-right: 20px; /* Add spacing between navbar items */
+}
+
+/* Styles for the navigation items with a more professional look */
+.navbar-list li a {
+text-decoration: none;
+color: #fff;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a professional font */
+font-size: 18px; /* Adjust font size */
+padding: 10px 15px; /* Add padding for a comfortable click area */
+position: relative;
+transition: transform 0.3s ease, color 0.3s ease; /* Add smooth transitions */
+}
+
+/* Hover effect for navbar items */
+.navbar-list li a:hover {
+transform: scale(1.1); /* Slightly scale on hover for a subtle effect */
+color: silver; /* Change text color on hover */
+text-decoration: none;
+}
+
+
+/* Add a border-bottom to the currently active page */
+.nav-item1.active, .nav-item2.active, .nav-item3.active, .nav-item4.active, .nav-item5.active { 
+border-bottom: 2px solid silver; /* Add a bottom border with a different color to the active page */ 
+}
+
+
+.content {
+    display: flex;
+    flex-direction: row; /* Align children horizontally */
+    width: 100%; /* Full width */
+    justify-content: center; /* Center the content */
+    align-items: center; /* Align text and image vertically */
+    padding: 0 20px; /* You can adjust left and right padding here if needed */
+}
+
+.text-section {
+    flex-basis: 50%; /* Take up half of the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    text-align: left; /* Align text to the left */
+    padding: 10px; /* Reduce padding to save space */
+    font-size: large;
+}
+
+.image-section {
+    flex-basis: 100%; /* Take up half of the container */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 2%; /* Add padding around the image */
+    box-sizing: border-box; /* Include padding in the width and height calculations */
+}
+
+.image-section img {
+    max-width: 100%; /* Make sure the image can scale up to 100% of its parent */
+    max-height: 100%; /* Make sure the image can scale up to 100% of its parent */
+    object-fit: contain; /* This will make sure the image maintains its aspect ratio */
+}
+
+.content-section {
+    padding: 20px; /* Add some padding */
+    /* Add any other styles you need for this section */
+}
+
+/* This will style the scrollbar track (the part the thumb moves along) */
+::-webkit-scrollbar-track {
+    background-color: #000; /* or any dark color you prefer */
+}
+
+/* This will style the scrollbar thumb (the part that you drag) */
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* or any color you prefer */
+    border-radius: 10px; /* optional: adds rounded corners to the thumb */
+}
+
+/* This will style the scrollbar itself (width, etc.) */
+::-webkit-scrollbar {
+    width: 8px; /* or any width you prefer */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #555 #000; /* thumb and track */
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+}
+
+.service-card {
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 40px 0;
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-card:nth-of-type(2) .service-image {
+    order: 2; /* Place the image after the description on the second card */
+    margin-right: 0; /* Reset the margin right for the image */
+    margin-left: 20px; /* Add space to the left of the image */
+}
+
+.service-card:nth-of-type(4) .service-image {
+    order: 2; /* Place the image after the description on the second card */
+    margin-right: 0; /* Reset the margin right for the image */
+    margin-left: 20px; /* Add space to the left of the image */
+}
+
+.service-card .service-image {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.service-card .service-image img {
+    width: 150px;
+    height: 150px;
+}
+
+.service-card .service-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Enhancing the Images within Cards */
+.service-image img {
+    width: 120px; /* Adjust size for consistency */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); /* Shadow for depth */
+}
+
+.service-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.service-card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+    /* Responsive Adjustments for Service Cards */
+    .service-card {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center; /* Center align items for a cohesive look */
+        text-align: center; /* Center text for better readability */
+    }
+
+    .service-image {
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+
+    .service-image img {
+        width: 100px; /* Slightly smaller images on smaller screens */
+        margin: auto; /* Center images */
+    }
+}
+
+/* Footer CSS */
+.footer {
+    background-color: black; /* Footer background color */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .social-icon {
+    margin: 0 10px;
+    display: inline-flex; /* changed to inline-flex to center icons */
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* Circle size */
+    height: 45px; /* Circle size */
+    border: 2px solid #fff; /* Adjust thickness of the circle */
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px; /* Icon size */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions for box-shadow and transform */
+    background: transparent;
+  }
+  
+  .social-icon:hover {
+    color: #fff !important; /* Force white color */
+    transform: scale(1.1); /* Slightly enlarge the icons */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Soft outer glow */
+  }
+  
+  /* Footer Links CSS */
+.footer-links {
+    display: flex; /* Use flex to put all items in a row */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px; /* Add padding around the links for a better click area */
+    transition: transform 0.3s ease; /* Smooth transition for enlarging the links */
+  }
+  
+  .footer-link:hover {
+    color: aqua;
+    transform: scale(1.1); /* Enlarge only the hovered link */
+  }
+  
+  /* Styling for dividers "|" */
+  .footer-links span {
+    color: #fff;
+    padding: 0 5px; /* Keep the dividers close to the links */
+  }
+  
+  /* Ensuring the copyright is centered at the bottom */
+  .copy-right {
+    text-align: center; /* Center the copyright text */
+    width: 100%; /* Ensure it spans the full width of its container */
+    padding-top: 20px; /* Add space above the copyright */
+  }
+  
+  
+  .copy-right {
+    font-size: 0.8em;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .footer-links a {
+      display: block; /* Stack the links on small screens */
+      margin: 5px 0; /* Adjust spacing as needed */
+    }
+  }
+  

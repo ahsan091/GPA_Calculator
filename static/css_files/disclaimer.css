@@ -1,0 +1,106 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000;
+    color: #888;
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+}
+
+main {
+    margin-left: 75px;
+}
+
+/* Basic Styles for Navbar */
+.navbar {
+    background-color: #000; /* Add a semi-transparent background for better readability */
+    color: #fff; /* Text color for navbar items */
+    display: flex; /* Use flexbox to arrange items horizontally */
+    justify-content: space-between; /* Push items to the ends of the container */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Add some padding to the navbar */
+}
+
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Styles for the company name */
+.navbar-home {
+    font-size: 24px; /* Increase font size for the company name */
+    font-weight: bold; /* Make it bold */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+    display: inline-block; /* Allow transformation */
+    color: #fff; /* Default color */
+    text-decoration: none;
+  }
+  
+  /* Hover effect for the company name */
+  .navbar-home:hover {
+    transform: scale(1.1); /* Enlarge the text */
+    color: gold; /* Change color on hover (optional) */
+    text-decoration: none;
+  }
+
+/* Styles for the navigation items */
+.navbar-list {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display items horizontally */
+}
+
+.navbar-list li {
+    margin-right: 20px; /* Add spacing between navbar items */
+}
+
+/* Styles for the navigation items with a more professional look */
+.navbar-list li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a professional font */
+    font-size: 18px; /* Adjust font size */
+    padding: 10px 15px; /* Add padding for a comfortable click area */
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add smooth transitions */
+}
+
+/* Hover effect for navbar items */
+.navbar-list li a:hover {
+    transform: scale(1.1); /* Slightly scale on hover for a subtle effect */
+    color: silver; /* Change text color on hover */
+    text-decoration: none;
+}
+
+/* Add a border-bottom to the currently active page */
+.nav-item1.active, .nav-item2.active, .nav-item3.active, .nav-item4.active, .nav-item5.active { 
+    border-bottom: 2px solid silver; /* Add a bottom border with a different color to the active page */ 
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    margin-top: auto; /* push the footer to the bottom */
+    padding: 20px 0; /* add padding inside the footer */
+    width: 100%; /* ensure the footer extends full width */
+}
+
+.copy-right {
+    margin-top: 100px; /* add space above the copyright */
+    font-size: 0.8em;
+}
+
+@media (max-width: 600px) {
+    .footer-links a {
+        display: block; /* Stack the links on small screens */
+        margin: 5px 0; /* Adjust spacing as needed */
+    }
+}

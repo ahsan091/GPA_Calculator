@@ -1,0 +1,199 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Basic Styles for Navbar */
+.navbar {
+  background-color: #000; /* Add a semi-transparent background for better readability */
+  color: #fff; /* Text color for navbar items */
+  display: flex; /* Use flexbox to arrange items horizontally */
+  justify-content: space-between; /* Push items to the ends of the container */
+  align-items: center; /* Center items vertically */
+  padding: 20px 30px; /* Add some padding to the navbar */
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Styles for the company name */
+.navbar-home {
+font-size: 24px; /* Increase font size for the company name */
+font-weight: bold; /* Make it bold */
+transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+display: inline-block; /* Allow transformation */
+color: #fff; /* Default color */
+text-decoration: none;
+}
+
+/* Hover effect for the company name */
+.navbar-home:hover {
+transform: scale(1.1); /* Enlarge the text */
+color: gold; /* Change color on hover (optional) */
+text-decoration: none;
+}
+/* Styles for the navigation items */
+.navbar-list {
+  list-style-type: none; /* Remove bullet points from the list */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display items horizontally */
+}
+
+.navbar-list li {
+  margin-right: 20px; /* Add spacing between navbar items */
+}
+
+/* Styles for the navigation items with a more professional look */
+.navbar-list li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a professional font */
+  font-size: 18px; /* Adjust font size */
+  padding: 10px 15px; /* Add padding for a comfortable click area */
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease; /* Add smooth transitions */
+}
+
+/* Hover effect for navbar items */
+.navbar-list li a:hover {
+  transform: scale(1.1); /* Slightly scale on hover for a subtle effect */
+  color: silver; /* Change text color on hover */
+  text-decoration: none;
+}
+
+
+/* Add a border-bottom to the currently active page */
+.nav-item1.active, .nav-item2.active, .nav-item3.active, .nav-item4.active, .nav-item5.active { 
+  border-bottom: 2px solid silver; /* Add a bottom border with a different color to the active page */ 
+}
+
+header h1 {
+  margin: 50px 100px; /* Adjust top and bottom margin as needed */
+  padding: 10px 0; /* Adjust top and bottom padding as needed */
+}
+
+main {
+  flex-grow: 1;
+  display: block;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  margin: 0 200px; /* Adjust the left and right margin as needed */
+}
+
+.lecture-container {
+  display: block; /* Establishes a flex container */
+  justify-content: space-around; /* Distributes space around items */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line if space runs out */
+  width: 100%; /* Sets the container to take the full width of its parent */
+}
+
+.lecture-link {
+  margin: 5px; /* Adds a little space around each link */
+  white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+.lecture-link a {
+  color: white; /* Text color */
+  text-decoration: none; /* Removes the underline from the links */
+  transition: color 0.4s ease; /* Smooth transition for color changes */
+}
+
+.lecture-link a:hover {
+  color: silver; /* Color change on hover */
+  text-decoration: none; /* Optional: removes the underline on hover */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+
+/* Footer CSS */
+.footer {
+  background-color: black; /* Footer background color */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  display: inline-flex; /* changed to inline-flex to center icons */
+  align-items: center;
+  justify-content: center;
+  width: 45px; /* Circle size */
+  height: 45px; /* Circle size */
+  border: 2px solid #fff; /* Adjust thickness of the circle */
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px; /* Icon size */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions for box-shadow and transform */
+  background: transparent;
+}
+
+.social-icon:hover {
+  color: #fff !important; /* Force white color */
+  transform: scale(1.1); /* Slightly enlarge the icons */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Soft outer glow */
+}
+
+/* Footer Links CSS */
+.footer-links {
+  display: flex; /* Use flex to put all items in a row */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px; /* Add padding around the links for a better click area */
+  transition: transform 0.3s ease; /* Smooth transition for enlarging the links */
+}
+
+.footer-link:hover {
+  color: aqua;
+  transform: scale(1.1); /* Enlarge only the hovered link */
+  text-decoration: none;
+}
+
+/* Styling for dividers "|" */
+.footer-links span {
+  color: #fff;
+  padding: 0 5px; /* Keep the dividers close to the links */
+}
+
+/* Ensuring the copyright is centered at the bottom */
+.copy-right {
+  text-align: center; /* Center the copyright text */
+  width: 100%; /* Ensure it spans the full width of its container */
+  padding-top: 20px; /* Add space above the copyright */
+}
+
+
+.copy-right {
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .footer-links a {
+    display: block; /* Stack the links on small screens */
+    margin: 5px 0; /* Adjust spacing as needed */
+  }
+}

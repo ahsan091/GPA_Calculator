@@ -1,0 +1,232 @@
+ /* Reset default margins and paddings */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body takes the full viewport height */
+  font-family: 'Arial', sans-serif;
+  width: 100%; /* Ensure the body takes the full viewport width */
+  background-color: #000; /* Set background color to black */
+  color: #fff;
+}
+
+#background-video {
+  width: 100%;
+  height: 77vh; /* Keep as is */
+  object-fit: cover;
+}
+
+.navbar {
+  background-color: #000; /* Add a semi-transparent background for better readability */
+  color: #fff; /* Text color for navbar items */
+  display: flex; /* Use flexbox to arrange items horizontally */
+  justify-content: space-between; /* Push items to the ends of the container */
+  align-items: center; /* Center items vertically */
+  padding: 20px 30px; /* Add some padding to the navbar */
+}
+
+
+.navbar a {
+text-decoration: none;
+color: #fff;
+}
+
+/* Styles for the company name */
+.navbar-home {
+  font-size: 24px; /* Increase font size for the company name */
+  font-weight: bold; /* Make it bold */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+  display: inline-block; /* Allow transformation */
+  color: #fff; /* Default color */
+  text-decoration: none;
+}
+
+/* Hover effect for the company name */
+.navbar-home:hover {
+  transform: scale(1.1); /* Enlarge the text */
+  color: gold; /* Change color on hover (optional) */
+  text-decoration: none;
+}
+/* Styles for the navigation items */
+.navbar-list {
+list-style-type: none; /* Remove bullet points from the list */
+margin: 0;
+padding: 0;
+display: flex; /* Display items horizontally */
+}
+
+.navbar-list li {
+margin-right: 20px; /* Add spacing between navbar items */
+}
+
+/* Styles for the navigation items with a more professional look */
+.navbar-list li a {
+text-decoration: none;
+color: #fff;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a professional font */
+font-size: 18px; /* Adjust font size */
+padding: 10px 15px; /* Add padding for a comfortable click area */
+position: relative;
+transition: transform 0.3s ease, color 0.3s ease; /* Add smooth transitions */
+}
+
+/* Hover effect for navbar items */
+.navbar-list li a:hover {
+transform: scale(1.1); /* Slightly scale on hover for a subtle effect */
+color: silver; /* Change text color on hover */
+text-decoration: none;
+}
+
+
+/* Add a border-bottom to the currently active page */
+.nav-item1.active, .nav-item2.active, .nav-item3.active, .nav-item4.active, .nav-item5.active { 
+border-bottom: 2px solid silver; /* Add a bottom border with a different color to the active page */ 
+}
+
+/* Adjusted CSS for .welcome-text to remove spaces around */
+.welcome-text {
+  color: white;
+  font-size: 40px;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between; /* Align items at the ends */
+  align-items: center;
+  margin: 0;
+  padding: 0 20px;
+  background-color: #000;
+}
+
+.welcome-text-center {
+  flex-grow: 1; /* Allow the text to grow and take up remaining space */
+  text-align: center;
+}
+
+/* New styles for the right-aligned text */
+.welcome-text-right {
+  justify-content: flex-end;
+}
+
+/* Style for toggle switch */
+.switch {
+  position: relative;
+  display: inline-block; /* This makes it sit on the same line as the text */
+  width: 60px;
+  height: 34px;
+  margin-left: 20px; /* Space it a bit from the welcome text */
+  right: 5px;
+}
+
+/* Hide default checkbox */
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Style the slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #2196F3; }
+
+input:focus + .slider { box-shadow: 0 0 1px #2196F3; }
+
+input:checked + .slider:before { transform: translateX(26px); }
+
+/* Rounded sliders */
+.slider.round { border-radius: 34px; }
+
+.slider.round:before { border-radius: 50%; }
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* For Mobile View */
+
+/* Media query for mobile screens */
+@media (max-width: 500px) {
+  body, html {
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling on mobile */
+  }
+
+  #background-video {
+    height: calc(100vh - 60px); /* Subtract the height of the navbar and welcome text */
+    width: 435px;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .navbar {
+    flex-direction: row; /* Ensure navbar items are in a single row */
+    justify-content: space-around; /* Space items out evenly */
+    padding: 10px 0; /* Top and bottom padding */
+    position: relative;
+    z-index: 2; /* Above the video */
+  }
+
+  .navbar a {
+    font-size: medium;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .navbar-list li {
+    padding: 0; /* Reduce left and right padding on list items */
+  }
+
+  .navbar-list li a {
+    padding: 0;
+    font-size: small; /* Adjust font size for mobile */
+  }
+
+  .welcome-text {
+    position: fixed; /* Fixed at the bottom */
+    bottom: 0; /* 0px from the bottom */
+    left: 0;
+    right: 0;
+    height: 50px; /* Height of the welcome text */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content */
+    margin: 0;
+    padding: 0 10px; /* Padding on the sides */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    z-index: 2; /* Above the video */
+    font-size: medium;
+  }
+
+  .welcome-text-center {
+    order: 1; /* Welcome text first */
+    flex-grow: 1; /* Take up available space */
+  }
+
+  .switch {
+    order: 2; /* Toggle switch after welcome text */
+    margin-left: 10px; /* Space from the welcome text */
+  }
+
+  .slider {
+    width: 40px; /* Smaller width for toggle */
+    height: 30px; /* Smaller height for toggle */
+  } 
+}
